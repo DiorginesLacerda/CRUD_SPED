@@ -11,7 +11,7 @@ namespace TesteSPED.Entities
     public class Participante
     {
         [Required, MaxLength(4),Column("REG", Order =1)]
-        public string Reg { get; set; }
+        public string Reg { get { return "0150"; } }
 
         [Required,MaxLength(60),Column("COD_PART", Order =2),Key]
         public string CodPart { get; set; }
@@ -20,19 +20,21 @@ namespace TesteSPED.Entities
         public string Nome { get; set; }
 
         [Required,MaxLength(5),Column("COD_PAIS",Order =4)]
-        public int CodPais { get; set; }
+        public string PaisId { get; set; }
+        [ForeignKey("PaisId")]
+        public virtual Pais Pais { get; set; }
 
-        [MaxLength(14),MinLength(14), Column("CNPJ",Order =5)]
-        public int Cnpj { get; set; }
+        [StringLength(14), Column("CNPJ",Order =5)]
+        public string Cnpj { get; set; }
 
-        [MaxLength(11), MinLength(11), Column("CPF", Order = 6)]
-        public int Cpf { get; set; }
+        [StringLength(11), Column("CPF", Order = 6)]
+        public string Cpf { get; set; }
 
         [MaxLength(14),Column("IE",Order =7)]
         public string IE { get; set; }
 
-        [MaxLength(7),MinLength(7),Column("COD_MUN",Order =8)]
-        public int CodMunicipio { get; set; }
+        [StringLength(7),Column("COD_MUN",Order =8)]
+        public string MunicipioId { get; set; }
 
         [StringLength(9),Column("SUFRAMA", Order =9)]
         public string Suframa { get; set; }
@@ -48,5 +50,7 @@ namespace TesteSPED.Entities
 
         [MaxLength(60),Column("BAIRRO",Order =13)]
         public string Bairro { get; set; }
+
+        
     }
 }
