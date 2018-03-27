@@ -148,7 +148,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Context\ProjectContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Entities\Estado.cs" />
+    <Compile Include="Entities\Municipio.cs" />
+    <Compile Include="Entities\Pais.cs" />
+    <Compile Include="Entities\Participante.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -194,8 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Context\" />
-    <Folder Include="Entities\" />
     <Folder Include="Models\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
